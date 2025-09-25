@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Debug - LC Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0c0a09; }
+    </style>
+</head>
+<body class="bg-gray-950 text-white min-h-screen">
+    <div class="container mx-auto px-4 py-16">
+        <h1 class="text-4xl font-bold text-center mb-8">Admin Debug Test</h1>
+        
+        <div class="text-center space-y-4">
+            <p class="text-lg">Kiểm tra trang quản trị tại: <a href="http://localhost:3000" class="text-purple-400 hover:text-purple-300 underline">http://localhost:3000</a></p>
+            
+            <div class="mt-8 space-y-4">
+                <h2 class="text-2xl font-semibold mb-4">Test Navigation:</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <button onclick="testTab('dashboard')" class="p-4 bg-purple-600 text-white rounded-lg hover:bg-purple-700">
+                        <div class="text-2xl mb-2">📊</div>
+                        <div>Tab Tổng quan</div>
+                    </button>
+                    
+                    <button onclick="testTab('posts')" class="p-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                        <div class="text-2xl mb-2">📝</div>
+                        <div>Tab Quản lý bài viết</div>
+                    </button>
+                    
+                    <button onclick="testTab('users')" class="p-4 bg-green-600 text-white rounded-lg hover:bg-green-700">
+                        <div class="text-2xl mb-2">👥</div>
+                        <div>Tab Quản lý người dùng</div>
+                    </button>
+                </div>
+                
+                <button onclick="openAdmin()" class="px-6 py-3 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700">
+                    Mở Trang Quản trị
+                </button>
+            </div>
+            
+            <div id="result" class="mt-8 p-4 bg-gray-800 rounded-lg hidden">
+                <h3 class="text-lg font-semibold mb-2">Kết quả:</h3>
+                <div id="result-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function testTab(tabName) {
+            console.log(`Testing tab: ${tabName}`);
+            document.getElementById('result').classList.remove('hidden');
+            document.getElementById('result-content').innerHTML = `Đang test tab: ${tabName}. Kiểm tra console để xem chi tiết.`;
+        }
+        
+        function openAdmin() {
+            // Mở trang admin với tài khoản admin
+            window.open('http://localhost:3000', '_blank');
+        }
+        
+        // Auto test when page loads
+        window.addEventListener('load', function() {
+            console.log('Admin debug page loaded');
+            console.log('Ready to test admin tabs');
+        });
+    </script>
+</body>
+</html>
