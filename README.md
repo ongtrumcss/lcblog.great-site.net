@@ -3,7 +3,7 @@
   <h1>🚀 LC Blog – Your Daily Tech Insight</h1>
   
   <p>
-    <a href="https://lcblog.great-site.net" target="_blank"><b>Truy cập bản triển khai (InfinityFree)</b></a>
+    <a href="https://lcblog.great-site.net" target="_blank"><b>Truy cập trang</b></a>
   </p>
   
   <p>
